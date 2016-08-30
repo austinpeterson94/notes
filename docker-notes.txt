@@ -1,0 +1,6 @@
+docker-machine create --driver virtualbox default
+docker-machine create --driver virtualbox --virtualbox-no-vtx-check default
+
+docker run -it -v C:\Users\user\cs371p:/usr/cs371p -w /usr/cs371p austin111223/mycs371
+
+

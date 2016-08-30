@@ -1,0 +1,300 @@
+Switched to a new branch 'test2'
+
+C:\Users\user\cs371p>git push origin test2
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/austinpeterson94/cs371p.git
+ * [new branch]      test2 -> test2
+
+C:\Users\user\cs371p>git pull origin test2
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/austinpeterson94/cs371p
+ * branch            test2      -> FETCH_HEAD
+   6ff4239..85b83ae  test2      -> origin/test2
+Updating 6ff4239..85b83ae
+Fast-forward
+ test | 2 ++
+ 1 file changed, 2 insertions(+)
+
+C:\Users\user\cs371p>git diff test1 test2
+diff --git a/test b/test
+index 9daeafb..8b07602 100644
+--- a/test
++++ b/test
+@@ -1 +1,3 @@
+ test
++asdf
++foo
+
+C:\Users\user\cs371p>git checkout test1
+Switched to branch 'test1'
+
+C:\Users\user\cs371p>git branch
+  master
+* test1
+  test2
+
+C:\Users\user\cs371p>git branch -d test2
+error: The branch 'test2' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D test2'.
+
+C:\Users\user\cs371p>git pull
+remote: Counting objects: 1, done.
+remote: Total 1 (delta 0), reused 1 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), done.
+From https://github.com/austinpeterson94/cs371p
+   6ff4239..f82c1db  test1      -> origin/test1
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=<remote>/<branch> test1
+
+
+C:\Users\user\cs371p>git pull origin
+You asked to pull from the remote 'origin', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+
+C:\Users\user\cs371p>git pull origin test1
+From https://github.com/austinpeterson94/cs371p
+ * branch            test1      -> FETCH_HEAD
+Updating 6ff4239..f82c1db
+Fast-forward
+ test | 2 ++
+ 1 file changed, 2 insertions(+)
+
+C:\Users\user\cs371p>git checkout test2
+Switched to branch 'test2'
+
+C:\Users\user\cs371p>git pull origin test2
+fatal: Couldn't find remote ref test2
+
+C:\Users\user\cs371p>git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+C:\Users\user\cs371p>git branch -d test2
+error: The branch 'test2' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D test2'.
+
+C:\Users\user\cs371p>git checkout test1
+Switched to branch 'test1'
+
+C:\Users\user\cs371p>git pull origin test1
+From https://github.com/austinpeterson94/cs371p
+ * branch            test1      -> FETCH_HEAD
+Already up-to-date.
+
+C:\Users\user\cs371p>git branch -d test2
+Deleted branch test2 (was 85b83ae).
+
+C:\Users\user\cs371p>git branch
+  master
+* test1
+
+C:\Users\user\cs371p>git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+C:\Users\user\cs371p>git pull prof master
+From https://github.com/gpdowning/cs371p
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> prof/master
+Already up-to-date.
+
+C:\Users\user\cs371p>git branch
+* master
+  test1
+
+C:\Users\user\cs371p>git checkout -b project1
+Switched to a new branch 'project1'
+
+C:\Users\user\cs371p>git branch
+  master
+* project1
+  test1
+
+C:\Users\user\cs371p>git diff project1 test1
+diff --git a/test b/test
+new file mode 100644
+index 0000000..8b07602
+--- /dev/null
++++ b/test
+@@ -0,0 +1,3 @@
++test
++asdf
++foo
+
+C:\Users\user\cs371p>git diff test1 project1
+diff --git a/test b/test
+deleted file mode 100644
+index 8b07602..0000000
+--- a/test
++++ /dev/null
+@@ -1,3 +0,0 @@
+-test
+-asdf
+-foo
+
+C:\Users\user\cs371p>git branch
+  master
+* project1
+  test1
+
+C:\Users\user\cs371p>git push origin project1
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/austinpeterson94/cs371p.git
+ * [new branch]      project1 -> project1
+
+C:\Users\user\cs371p>git log
+commit 5da751c024520aa7c7beb07114e8c90a1f3946dd
+Author: Glenn Downing <downing@cs.utexas.edu>
+Date:   Sun Aug 28 22:32:51 2016 -0500
+
+    another commit
+
+commit 539395d269443273be72732065d9323561bc4ad8
+Author: Glenn Downing <downing@cs.utexas.edu>
+Date:   Sat Aug 27 23:07:56 2016 -0500
+
+    another commit
+
+commit 81488a0a83e958fc878430252ee959df6d28891a
+Author: Glenn Downing <downing@cs.utexas.edu>
+Date:   Sat Aug 27 17:05:18 2016 -0500
+
+    another commit
+
+commit 6bdcc051737dcd896f8f3bad0673a1c50a22e6ea
+Author: Glenn Downing <downing@cs.utexas.edu>
+Date:   Thu Aug 25 22:20:27 2016 -0500
+
+    another commit
+
+commit 9701e94b2e2365351cf8cb85b7ce9396760fd5eb
+Author: Glenn Downing <downing@cs.utexas.edu>
+Date:   Thu Aug 25 22:18:38 2016 -0500
+
+C:\Users\user\cs371p>
+C:\Users\user\cs371p>git status
+On branch project1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   projects/collatz/Collatz.c++
+        modified:   projects/collatz/RunCollatz.c++
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\user\cs371p>bit branch
+'bit' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\user\cs371p>git branch
+  master
+* project1
+  test1
+
+C:\Users\user\cs371p>git add projects/collatz/Collatz.c++
+
+C:\Users\user\cs371p>git status
+On branch project1
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   projects/collatz/Collatz.c++
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   projects/collatz/RunCollatz.c++
+
+
+C:\Users\user\cs371p>git commit -m "learning to commit"
+[project1 d941385] learning to commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\user\cs371p>git add projects/collatz/RunCollatz.c++
+
+C:\Users\user\cs371p>git status
+On branch project1
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   projects/collatz/RunCollatz.c++
+
+
+C:\Users\user\cs371p>git commit -m "my other commit learning"
+[project1 9eb940d] my other commit learning
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\user\cs371p>git log
+commit 9eb940d5a3c9ba859ada807f93101ff05b4a7883
+Author: Austin Peterson <austin.peterson@utexas.edu>
+Date:   Mon Aug 29 21:49:37 2016 -0500
+
+    my other commit learning
+
+commit d941385bf81aff3ee5534eb4b1e023718b950fea
+Author: Austin Peterson <austin.peterson@utexas.edu>
+Date:   Mon Aug 29 21:48:49 2016 -0500
+
+    learning to commit
+
+commit 5da751c024520aa7c7beb07114e8c90a1f3946dd
+Author: Glenn Downing <downing@cs.utexas.edu>
+Date:   Sun Aug 28 22:32:51 2016 -0500
+
+    another commit
+
+commit 539395d269443273be72732065d9323561bc4ad8
+Author: Glenn Downing <downing@cs.utexas.edu>
+Date:   Sat Aug 27 23:07:56 2016 -0500
+
+    another commit
+
+commit 81488a0a83e958fc878430252ee959df6d28891a
+Author: Glenn Downing <downing@cs.utexas.edu>
+Date:   Sat Aug 27 17:05:18 2016 -0500
+
+C:\Users\user\cs371p>git show d94138
+commit d941385bf81aff3ee5534eb4b1e023718b950fea
+Author: Austin Peterson <austin.peterson@utexas.edu>
+Date:   Mon Aug 29 21:48:49 2016 -0500
+
+    learning to commit
+
+diff --git a/projects/collatz/Collatz.c++ b/projects/collatz/Collatz.c++
+index 899f4dd..878dd75 100644
+--- a/projects/collatz/Collatz.c++
++++ b/projects/collatz/Collatz.c++
+@@ -3,7 +3,7 @@
+ // Copyright (C) 2016
+ // Glenn P. Downing
+ // ----------------------------
+-
++//
+ // --------
+ // includes
+ // --------
+
+C:\Users\user\cs371p>git push origin project1
+Counting objects: 10, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (10/10), 833 bytes | 0 bytes/s, done.
+Total 10 (delta 6), reused 0 (delta 0)
+remote: Resolving deltas: 100% (6/6), completed with 4 local objects.
+To https://github.com/austinpeterson94/cs371p.git
+   5da751c..9eb940d  project1 -> project1
+
+C:\Users\user\cs371p>
